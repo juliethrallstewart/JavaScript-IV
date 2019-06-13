@@ -171,24 +171,24 @@ console.log(arnaud.graduate())
 
 const antra = new ProgjectManager({
     name: 'Antra',
-    location: 'Barcelona, Spain',
-    age: 30,
+    location: 'New York City, New York',
+    age: 39,
     favLanguage: 'Python',
     specialty: 'Back-end',
-    catchPhrase: `I like turtles.`,
-    gradClassName: 'Web17',
+    catchPhrase: `Meet me on the moon.`,
+    gradClassName: 'Web16',
     favInstructor: 'Neil Armstrong'
 })
 
 const mitzi = new ProgjectManager({
     name: 'Mitzi',
-    location: 'Barcelona, Spain',
-    age: 30,
-    favLanguage: 'Python',
+    location: 'Lisbon, Portugal',
+    age: 29,
+    favLanguage: 'C#',
     specialty: 'Back-end',
-    catchPhrase: `I like turtles.`,
-    gradClassName: 'Web5',
-    favInstructor: 'Batman'
+    catchPhrase: `I can't remember`,
+    gradClassName: 'Web10',
+    favInstructor: 'Santa'
 })
 
 
