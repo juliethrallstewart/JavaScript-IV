@@ -42,13 +42,17 @@ class Instructor extends Person {
         if (result >= student.grade) {
             let add = result - student.grade;
             result = student.grade + result;
+            student.grade = result;
             if (result > 100) {
+                student.grade = 100;
                 return `${student.name}'s grade is 100%!`
             }
             return `${student.name}s grade is ${result}`;
         } else {
             let deduct = student.grade - result;
             result = student.grade - deduct;
+            student.grade = result;
+
             return `${student.name}s grade is ${result}`;
         }
 
@@ -203,3 +207,5 @@ console.log(antra.standup('@web21'))
 console.log(antra.debugsCode(lilia, 'JavaScript'))
 
 console.log(sara.calcScore(arnaud))
+
+console.log(arnaud.grade)
