@@ -36,6 +36,23 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student} recieves a perfect score on ${subject}`
     }
+
+    calcScore(student) {
+        let result = Math.floor(Math.random() * 100);
+        if (result >= student.grade) {
+            let add = result - student.grade;
+            result = student.grade + result;
+            if (result > 100) {
+                return `${student.name}'s grade is 100%!`
+            }
+            return `${student.name}s grade is ${result}`;
+        } else {
+            let deduct = student.grade - result;
+            result = student.grade - deduct;
+            return `${student.name}s grade is ${result}`;
+        }
+
+    }
 }
 
 class Student extends Person {
@@ -44,6 +61,7 @@ class Student extends Person {
         this.previousBackground = attr.previousBackground;
         this.className = attr.className;
         this.favSubjects = attr.favSubjects;
+        this.grade = Math.floor(Math.random() * 100);
     }
 
     listSubjects() {
@@ -57,6 +75,16 @@ class Student extends Person {
 
     sprintChallenge(subject) {
         return `${this.name} has begun the Sprint Challenge on ${subject}.`
+
+    }
+
+    graduate() {
+        if (this.grade >= 70) {
+            return `${this.name} graduated!`
+        } else {
+            return `Go back to studying ${this.name}!`
+        }
+
     }
 
 }
@@ -73,7 +101,7 @@ class ProgjectManager extends Instructor {
     }
 
     debugsCode(student, subject) {
-        return `${this.name} debugs ${student.name}'s code on ${subject}`
+        return `${this.name} debugs ${student.name}s code on ${subject}`
     }
 
 }
@@ -134,6 +162,8 @@ console.log(arnaud.speak())
 console.log(arnaud.listSubjects())
 console.log(arnaud.PRAssignment('Node.js'))
 console.log(arnaud.sprintChallenge('Python'))
+console.log(arnaud.grade)
+console.log(arnaud.graduate())
 
 const antra = new ProgjectManager({
     name: 'Antra',
@@ -171,3 +201,5 @@ console.log(antra.speak())
 console.log(antra.demo('Cats!'))
 console.log(antra.standup('@web21'))
 console.log(antra.debugsCode(lilia, 'JavaScript'))
+
+console.log(sara.calcScore(arnaud))
